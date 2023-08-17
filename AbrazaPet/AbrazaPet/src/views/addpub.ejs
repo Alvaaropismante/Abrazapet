@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AbrazaPet</title>
+  <!--BOOTSTRAP 4-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <!--Font awesome-->
+  <script src="https://kit.fontawesome.com/2e23dd5dfa.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+  .botones {
+    background: rgb(24, 154, 180);
+    background: linear-gradient(90deg, rgba(24, 154, 180, 1) 13%, rgba(5, 68, 94, 1) 59%);
+    box-shadow: 2px 2px 5px #000000;
+  }
+
+  .btn {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar {
+    background: rgb(24, 154, 180);
+    background: linear-gradient(90deg, rgba(24, 154, 180, 1) 0%, rgba(5, 68, 94, 1) 12%);
+    box-shadow: 2px 2px 5px #000000;
+  }
+
+  .iconos {
+    float: left;
+  }
+  .imagencard {
+    width: 200px;
+    height: auto;
+    box-shadow: 2px 2px 5px #000000;
+  }
+  .imagenusuario{
+    width: 100px;
+    height: 100px ;
+  }
+
+  .mascotacard{
+    margin: 10px 10px 10px 10px;
+  }
+
+  .navboton {
+    float: right;
+  }
+</style>
+
+<body>
+  <!--navegación-->
+  <!-- Toggler/collapsibe Button -->
+
+  <nav class="navbar navbar-dark sticky-top">
+    <div class="container">
+      <!-- Brand -->
+      <a href="javascript:history.back()"><i class="fas fa-arrow-left fa-2x text-white"></i></a>
+      <a class="navbar-brand text-center" href="/"><b>Agregar publicacion</b></a>
+    </div>
+  </nav>
+
+  <section class="formulario container mb-5">
+    <div class="row">
+      <div class="formulario container">
+        <div class="card container">
+          <div class="card-body">
+            <form action="/publicacion" method="POST">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label><b>Usuario:</b></label>
+                  <input type="text" class="form-control" name="id_usuario" placeholder="<%= usuario[0].nombres_usuario %>" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                  <label><b>Nombre animal:</b></label>
+                  <input type="text" class="form-control" name="nombre_animal" placeholder="ingrese nombre de animal"
+                    required>
+                </div>
+                <div class="form-group col-md-3">
+                  <label><b>Descripción:</b></label>
+                  <input type="text" class="form-control" name="descripcion_animal"
+                    placeholder="Agregue descripción de su mascota" required>
+                </div>
+                <div class="form-group col-md-3">
+                  <label><b>Estado:</b></label>
+                  <select type="text" class="form-control" name="id_estado" placeholder="" required>
+                    <option value="1">Abandonado</option>
+                    <option value="2">En adopcion</option>
+                    <option value="3">Perdido</option>
+                    <option value="4">Otro</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label><b>Sexo animal:</b></label>
+                  <select type="text" class="form-control" name="id_sexo" placeholder="" required>
+                    <option value="1">Hembra</option>
+                    <option value="2">Macho</option>
+                    <option value="3">Indefinido</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label><b>Tipo animal:</b></label>
+                  <select type="text" class="form-control" name="id_tipo_animal" placeholder="" required>
+                    <option value="1">Perro</option>
+                    <option value="2">Pajaro</option>
+                    <option value="3">Gato</option>
+                    <option value="4">Elefante</option>
+                    <option value="5">Otro</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn bg-info text-white"><b>Agregar animal</b></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+    <div class="botones d-flex justify-content-center fixed-bottom">
+      <a href="/user"><button type="button" class="btn btn-outline-light"><i class="fas fa-user fa-3x"></i></button></a>
+      <a href="/"><button type="button" class="btn btn-outline-light"><i class="fas fa-paw fa-3x"></i></button></a>
+      <a href=""><button type="button" class="btn btn-outline-light"><i
+            class="fas fa-map-marker-alt fa-3x"></i></button></a>
+    </div>
+
+
+
+    <!--BOOTSTRAP 4 Scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

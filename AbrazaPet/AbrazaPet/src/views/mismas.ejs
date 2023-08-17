@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AbrazaPet</title>
+  <!--BOOTSTRAP 4-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <!--Font awesome-->
+  <script src="https://kit.fontawesome.com/2e23dd5dfa.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+  .botones {
+    background: rgb(24, 154, 180);
+    background: linear-gradient(90deg, rgba(24, 154, 180, 1) 13%, rgba(5, 68, 94, 1) 59%);
+    box-shadow: 2px 2px 5px #000000;
+  }
+
+  .btn {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .navbar {
+    background: rgb(24, 154, 180);
+    background: linear-gradient(90deg, rgba(24, 154, 180, 1) 0%, rgba(5, 68, 94, 1) 12%);
+    box-shadow: 2px 2px 5px #000000;
+  }
+
+  .iconos {
+    float: left;
+  }
+  .imagencard {
+    width: 200px;
+    height: auto;
+    box-shadow: 2px 2px 5px #000000;
+  }
+  .imagenusuario{
+    width: 100px;
+    height: 100px ;
+  }
+
+  .mascotacard{
+    margin: 10px 10px 10px 10px;
+  }
+
+  .navboton {
+    float: right;
+  }
+</style>
+
+<body>
+  <!--navegación-->
+  <!-- Toggler/collapsibe Button -->
+
+  <nav class="navbar navbar-dark sticky-top">
+    <div class="container">
+      <!-- Brand -->
+      <a href="javascript:history.back()"><i class="fas fa-arrow-left fa-2x text-white"></i></a>
+      <a class="navbar-brand text-center" href="/"><b>Mascotas</b></a>
+      <a href="/addmas"><i class="fas fa-plus fa-2x text-white"></i></a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <% for(var i = 0; i < mascotas.length; i++){ %>
+        <div class="card mascotacard">
+            <div class="card-body">
+                <div class="text-center">
+                    <a href=""><img class="imagencard" src="/imagenes/<%= mascotas[i].imagen_mascota%>"
+                        alt="Imagen<%= mascotas[i].imagen_mascota%>" />
+                    </a>
+                    <br>
+                    <div class="mt-3">
+                      <b>Nombre: <%= mascotas[i].nombre_mascota%></b>
+                      <br>
+                      <b>Color: <%= mascotas[i].color_mascota%></b>
+                    </div>
+                    <a href=""><div class="card border-danger mt-3">
+                        <button type="button" class="btn btn-outline-danger"><h4><b>Notificar perdido</b></h4></button>
+                      </div></a>
+                </div>
+            </div>
+          </div>
+        
+        <% } %>
+  </div>
+
+
+
+
+
+    <div class="botones d-flex justify-content-center">
+      <a href="/user"><button type="button" class="btn btn-outline-light"><i class="fas fa-user fa-3x"></i></button></a>
+      <a href="/"><button type="button" class="btn btn-outline-light"><i class="fas fa-paw fa-3x"></i></button></a>
+      <a href=""><button type="button" class="btn btn-outline-light"><i
+            class="fas fa-map-marker-alt fa-3x"></i></button></a>
+    </div>
+
+
+
+    <!--BOOTSTRAP 4 Scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
